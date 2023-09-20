@@ -24,11 +24,14 @@ To deploy HouseWatch, clone this repo and then run the following, substituting t
 
 ```bash
 SITE_ADDRESS=<SITE_ADDRESS> \
-CLICKHOUSE_HOST=localhost \
-CLICKHOUSE_CLUSTER=mycluster \
+CLICKHOUSE_HOST=clickhouse_cluster_nlb_hostname_or_one_hostname \
+CLICKHOUSE_DATABASE=default
+CLICKHOUSE_SECURE=<true|false> \
+CLICKHOUSE_VERIFY=<true|false>
+CLICKHOUSE_CLUSTER=ch-cluster \
 CLICKHOUSE_USER=default \
 CLICKHOUSE_PASSWORD=xxxxxxxxxxx \
-docker compose -f docker-compose.yml up
+docker compose -f docker-compose.dev.yml up
 ```
 
 `SITE_ADDRESS` here is the address that the UI will be running on. It can be a domain name or simply a port like `:80`.
