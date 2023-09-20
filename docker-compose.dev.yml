@@ -30,7 +30,6 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - clickhouse
       - db
       - redis
       - rabbitmq
@@ -70,7 +69,6 @@ services:
     volumes:
       - .:/code
     depends_on:
-      - clickhouse
       - db
       - redis
       - rabbitmq
