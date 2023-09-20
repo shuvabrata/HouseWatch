@@ -38,6 +38,9 @@ docker compose -f docker-compose.dev.yml up
 
 After running the above, the UI will be running on the address you specified. This will be something like http://localhost if you used `:80` for your `SITE_ADDRESS` above. I would think twice about exposing this to the internet, as it is not currently secured in any way.
 
+If `SITE_ADDRESS` does not work, then try http://localhost:8888/ or look at the log file of the "web" container. It also prints an URL which 
+is available only on the docker network IP address. 
+
 <details>
 
 <summary>Read more</summary>
